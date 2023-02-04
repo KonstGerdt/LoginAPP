@@ -11,7 +11,7 @@ import UIKit
         
         @IBOutlet weak var WelcomeLabel: UILabel!
         
-    var userName = ""
+    var userName = "Konstantin"
         
     override func viewDidLoad() {
         super.viewDidLoad()
