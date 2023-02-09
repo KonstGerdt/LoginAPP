@@ -11,12 +11,12 @@ import UIKit
         
         @IBOutlet weak var WelcomeLabel: UILabel!
         
-    var userName = "Konstantin"
+        var user:User!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WelcomeLabel.text = "Welcome, \(userName)!"
+        WelcomeLabel.text = "Welcome, \(user.person.fullName)!"
        
     }
            
