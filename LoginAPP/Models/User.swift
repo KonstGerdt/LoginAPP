@@ -28,6 +28,7 @@ struct Person {
     let middlename: String
     let bio: String
     
+    
     var fullName: String {
         "\(name) \(surname)"
     }
@@ -51,5 +52,7 @@ struct Person {
         )
     }
 }
+
+
 
 
