@@ -32,47 +32,47 @@ class LoginWievController: UIViewController {
             }
         }
     }
-        
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            super.touchesBegan(touches, with: event)
-            view.endEditing(true)
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    @IBAction func LogInPressed(_ sender: Any) {
+        guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
+            showAlert(
+                title: "Invalid your Login and Password",
+                message: "Please, enter your Login and Password",
+                textField: passwordTextField
+            )
+            return
         }
-        
-        @IBAction func LogInPressed(_ sender: Any) {
-            guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
-                showAlert(
-                    title: "Invalid your Login and Password",
-                    message: "Please, enter your Login and Password",
-                    textField: passwordTextField
-                )
-                return
-            }
+    }
+    @IBAction func ForRegisterData(_ sender: Any) {
+        showAlert(title: ":)", message: "Your name is '\(user.login)' ")
+    }
+    
+    @IBAction func ForRegisterData2(_ sender: Any) {
+        showAlert(title:":)" , message: "Your password is '\(user.password)' ")
+    }
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
+    
+    
+    
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
         }
-        @IBAction func ForRegisterData(_ sender: Any) {
-            showAlert(title: ":)", message: "Your name is '\(user.login)' ")
-        }
-        
-        @IBAction func ForRegisterData2(_ sender: Any) {
-            showAlert(title:":)" , message: "Your password is '\(user.password)' ")
-        }
-        @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-            userNameTextField.text = ""
-            passwordTextField.text = ""
-        }
-        
-        
-        
-        
-        private func showAlert(title: String, message: String, textField: UITextField? = nil) {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                textField?.text = ""
-            }
-            alert.addAction(okAction)
-            present(alert, animated: true)
-            
-        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
         
     }
     
+}
+
 

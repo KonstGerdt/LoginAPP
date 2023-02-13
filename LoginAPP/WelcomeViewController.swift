@@ -7,19 +7,19 @@
 
 import UIKit
 
-    class WelcomeViewController: UIViewController {
-        
-        @IBOutlet weak var WelcomeLabel: UILabel!
-        
-        var user:User!
-        
+class WelcomeViewController: UIViewController {
+    
+    @IBOutlet weak var WelcomeLabel: UILabel!
+    
+    var user:User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         WelcomeLabel.text = "Welcome, \(user.person.fullName)!"
-       
+        
     }
-           
+    
 }
     
 
